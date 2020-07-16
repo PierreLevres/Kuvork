@@ -99,10 +99,10 @@ export class EuropeanController extends SessionController {
       const notificationReponse = await got(`${EU_BASE_URL}/api/v1/spa/notifications/register`, {
         method: 'POST',
         headers: {
-          'ccsp-service-id': 'fdc85c00-0a2f-4c64-bcb4-2cfb1500730a',
+          'ccsp-service-id': '6d477c38-3ca4-4cf3-9557-2a1929a94654',
           'Content-Type': 'application/json;charset=UTF-8',
           'Content-Length': '231',
-          'Host': 'prd.eu-ccapi.kia.com:8080',
+          'Host': 'prd.eu-ccapi.hyundai.com:8080',
           'Connection': 'Keep-Alive',
           'Accept-Encoding': 'gzip',
           'User-Agent': 'okhttp/3.10.0',
@@ -132,8 +132,8 @@ export class EuropeanController extends SessionController {
         headers: {
           'Authorization': EU_CONSTANTS.basicToken,
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Content-Length': '150',
-          'Host': 'prd.eu-ccapi.kia.com:8080',
+          'Content-Length': '154',
+          'Host': 'prd.eu-ccapi.hyundai.com:8080',
           'Connection': 'Keep-Alive',
           'Accept-Encoding': 'gzip',
           'User-Agent': 'okhttp/3.10.0',

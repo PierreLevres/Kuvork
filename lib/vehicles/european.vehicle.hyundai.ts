@@ -13,7 +13,7 @@ import got from 'got';
 import logger from '../logger';
 import { Vehicle } from './vehicle';
 import { EuropeanController } from '../controllers/european.controller';
-import { getTempFromCode, getTempCode } from '../util';
+import { getTempCode } from '../util';
 import { EU_BASE_URL } from '../constants/europe';
 
 export default class EuropeanVehicle extends Vehicle {
@@ -206,7 +206,7 @@ export default class EuropeanVehicle extends Vehicle {
         sideMirrorHeat: false,
         rearWindowHeat: !!vehicleStatus.sideBackWindowHeat,
         defrost: vehicleStatus.defrost,
-        temperatureSetpoint: getTempFromCode(vehicleStatus.airTemp.value),
+        temperatureSetpoint: vehicleStatus.airTemp.value,
         temperatureUnit: vehicleStatus.airTemp.unit,
       },
       engine: {
@@ -214,11 +214,12 @@ export default class EuropeanVehicle extends Vehicle {
         adaptiveCruiseControl: vehicleStatus.acc,
         range: vehicleStatus.evStatus.drvDistance[0].rangeByFuel.totalAvailableRange.value,
         charging: vehicleStatus?.evStatus?.batteryCharge,
-        EVbatteryCharge: vehicleStatus?.evStatus?.batteryStatus,
         batteryCharge: vehicleStatus?.battery?.batSoc,
       }
     };
+
     this._status = input.parsed ? parsedStatus : vehicleStatus;
+
     return Promise.resolve(this._status);
   }
 
