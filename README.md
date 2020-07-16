@@ -1,6 +1,6 @@
-# bluelinky
+# KuvoRK
 
-An unoffcial nodejs API wrapper for Hyundai BlueLink
+An unoffcial nodejs API wrapper for European EV with KiaUVO forked from Hyundai BlueLink, Bluelinky project
 
 [![CI](https://img.shields.io/circleci/build/github/Hacksore/bluelinky.svg)](https://circleci.com/gh/Hacksore/bluelinky/tree/master)
 [![npm](https://img.shields.io/npm/v/bluelinky.svg)](https://www.npmjs.com/package/bluelinky)
