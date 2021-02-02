@@ -1,6 +1,6 @@
 // Kia seems to use myuvo.ca as mentioned by @wcomartin
 // forks can modify some things to make this work
-export const CA_API_HOST = 'mybluelink.ca';
+export const CA_API_HOST = 'myuvo.ca';
 export const CA_BASE_URL = `https://${CA_API_HOST}`;
 export const CLIENT_ORIGIN = 'SPA';
 
