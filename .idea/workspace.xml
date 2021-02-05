@@ -3,10 +3,35 @@
   <component name="ChangeListManager">
     <list default="true" id="5ef84275-f6af-480b-94d9-07aab8ebd0c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/bluelinky.spec.ts_" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/util.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/util.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/vehicle.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/vehicle.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.ts" beforeDir="false" afterPath="$PROJECT_DIR$/debug.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/for Kia-lib-constants-europe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/america.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/canada.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/europe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/american.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/canadian.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/european.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/interfaces/american.interfaces.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/interfaces/common.interfaces.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/interfaces/european.interfaces.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/logger.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vehicles/american.vehicle.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vehicles/canadian.vehicle.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vehicles/european.vehicle.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vehicles/vehicle.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/update.sh" beforeDir="false" afterPath="$PROJECT_DIR$/update.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
