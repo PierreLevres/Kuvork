@@ -7,3 +7,14 @@ config*.json
 .vs/
 .vscode/
 coverage/
+.idea/bluelinky 2.iml
+.idea/bluelinky 3.iml
+.idea/inspectionProfiles/profiles_settings 2.xml
+.idea/inspectionProfiles/profiles_settings 3.xml
+.idea/modules 2.xml
+.idea/modules 3.xml
+.idea/vcs 2.xml
+.idea/vcs 3.xml
+.idea/workspace 2.xml
+.idea/workspace 3.xml
+.idea/workspace.xml

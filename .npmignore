@@ -3,3 +3,6 @@ config*.json
 .env
 .DS_Store
 .rpt2_cache
+update.sh
+.idea/
+.github/

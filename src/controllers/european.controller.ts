@@ -1,4 +1,4 @@
-import { EU_CONSTANTS, EU_BASE_URL } from './../constants/europe';
+import { EU_CONSTANTS, EU_BASE_URL, EU_API_HOST, EU_CLIENT_ID } from './../constants/europe';
 import { BlueLinkyConfig, Session } from './../interfaces/common.interfaces';
 import * as pr from 'push-receiver';
 import got from 'got';
@@ -16,7 +16,7 @@ import { VehicleRegisterOptions } from '../interfaces/common.interfaces';
 export class EuropeanController extends SessionController {
   constructor(userConfig: BlueLinkyConfig) {
     super(userConfig);
-    logger.debug(`EU Controller created`);
+    logger.debug('EU Controller created');
 
     this.session.deviceId = this.uuidv4();
   }
@@ -27,7 +27,7 @@ export class EuropeanController extends SessionController {
     controlToken: undefined,
     deviceId: this.uuidv4(),
     tokenExpiresAt: 0,
-    controlTokenExpiresAt: 0
+    controlTokenExpiresAt: 0,
   };
 
   private vehicles: Array<EuropeanVehicle> = [];
@@ -41,12 +41,53 @@ export class EuropeanController extends SessionController {
   }
 
   public async refreshAccessToken(): Promise<string> {
-    return this.login();
+    const shouldRefreshToken = Math.floor(Date.now() / 1000 - this.session.tokenExpiresAt) >= -10;
+
+    if (!this.session.refreshToken) {
+      logger.debug('Need refresh token to refresh access token. Use login()');
+      return 'Need refresh token to refresh access token. Use login()';
+    }
+
+    if (!shouldRefreshToken) {
+      logger.debug('Token not expired, no need to refresh');
+      return 'Token not expired, no need to refresh';
+    }
+
+    const formData = new URLSearchParams();
+    formData.append('grant_type', 'refresh_token');
+    formData.append('redirect_uri', 'https://www.getpostman.com/oauth2/callback'); // Oversight from Hyundai developers
+    formData.append('refresh_token', this.session.refreshToken);
+
+    const response = await got(ALL_ENDPOINTS.EU.token, {
+      method: 'POST',
+      headers: {
+        'Authorization': EU_CONSTANTS.basicToken,
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Host': EU_API_HOST,
+        'Connection': 'Keep-Alive',
+        'Accept-Encoding': 'gzip',
+        'User-Agent': 'okhttp/3.10.0',
+      },
+      body: formData.toString(),
+      throwHttpErrors: false,
+    });
+
+    if (response.statusCode !== 200) {
+      logger.debug(`Refresh token failed: ${response.body}`);
+      return `Refresh token failed: ${response.body}`;
+    }
+
+    const responseBody = JSON.parse(response.body);
+    this.session.accessToken = 'Bearer ' + responseBody.access_token;
+    this.session.tokenExpiresAt = Math.floor(Date.now() / 1000 + responseBody.expires_in);
+
+    logger.debug('Token refreshed');
+    return 'Token refreshed';
   }
 
   public async enterPin(): Promise<string> {
     if (this.session.accessToken === '') {
-      Promise.reject('Token not set');
+      throw 'Token not set';
     }
 
     const response = await got(`${EU_BASE_URL}/api/v1/user/pin`, {
@@ -63,8 +104,8 @@ export class EuropeanController extends SessionController {
     });
 
     this.session.controlToken = 'Bearer ' + response.body.controlToken;
-    this.session.controlTokenExpiresAt = new Date().getTime() + 1000 * 60 * 10;
-    return Promise.resolve('PIN entered OK, The pin is valid for 10 minutes');
+    this.session.controlTokenExpiresAt = Math.floor(Date.now() / 1000 + response.body.expiresTime);
+    return 'PIN entered OK, The pin is valid for 10 minutes';
   }
 
   public async login(): Promise<string> {
@@ -80,16 +121,18 @@ export class EuropeanController extends SessionController {
         method: 'POST',
         json: true,
         body: {
-          "email": this.userConfig.username,
-          "password": this.userConfig.password,
+          'email': this.userConfig.username,
+          'password': this.userConfig.password,
         },
         cookieJar,
       });
 
-      if(authCodeResponse){
+      logger.debug(authCodeResponse.body);
+      let authorizationCode;
+      if (authCodeResponse) {
         const regexMatch = /code=([^&]*)/g.exec(authCodeResponse.body.redirectUrl);
-        if(regexMatch !== null){
-          this.session.refreshToken = regexMatch[1];
+        if (regexMatch !== null) {
+          authorizationCode = regexMatch[1];
         } else {
           throw new Error('@EuropeControllerLogin: AuthCode was not found');
         }
@@ -99,10 +142,9 @@ export class EuropeanController extends SessionController {
       const notificationReponse = await got(`${EU_BASE_URL}/api/v1/spa/notifications/register`, {
         method: 'POST',
         headers: {
-          'ccsp-service-id': 'fdc85c00-0a2f-4c64-bcb4-2cfb1500730a',
+          'ccsp-service-id': EU_CLIENT_ID,
           'Content-Type': 'application/json;charset=UTF-8',
-          'Content-Length': '231',
-          'Host': 'prd.eu-ccapi.kia.com:8080',
+          'Host': EU_API_HOST,
           'Connection': 'Keep-Alive',
           'Accept-Encoding': 'gzip',
           'User-Agent': 'okhttp/3.10.0',
@@ -115,25 +157,21 @@ export class EuropeanController extends SessionController {
         json: true,
       });
 
-      if(notificationReponse) {
+      if (notificationReponse) {
         this.session.deviceId = notificationReponse.body.resMsg.deviceId;
       }
 
       const formData = new URLSearchParams();
       formData.append('grant_type', 'authorization_code');
       formData.append('redirect_uri', ALL_ENDPOINTS.EU.redirectUri);
-
-      if(this.session.refreshToken){
-        formData.append('code', this.session.refreshToken);
-      }
+      formData.append('code', authorizationCode);
 
       const response = await got(ALL_ENDPOINTS.EU.token, {
         method: 'POST',
         headers: {
           'Authorization': EU_CONSTANTS.basicToken,
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Content-Length': '150',
-          'Host': 'prd.eu-ccapi.kia.com:8080',
+          'Host': EU_API_HOST,
           'Connection': 'Keep-Alive',
           'Accept-Encoding': 'gzip',
           'User-Agent': 'okhttp/3.10.0',
@@ -141,31 +179,32 @@ export class EuropeanController extends SessionController {
         },
         body: formData.toString(),
         cookieJar,
-      }).catch(err => {
-        logger.debug(`Get token failed: ${err}`);
-        Promise.reject(`Get token failed: ${err}`);
       });
 
-      if(response){
-        const responseBody = JSON.parse(response.body);
-        this.session.accessToken = 'Bearer ' + responseBody.access_token;
+      if (response.statusCode !== 200) {
+        throw `Get token failed: ${response.body}`;
       }
 
-      return Promise.resolve('Login success');
+      if (response) {
+        const responseBody = JSON.parse(response.body);
+        this.session.accessToken = 'Bearer ' + responseBody.access_token;
+        this.session.refreshToken = responseBody.refresh_token;
+        this.session.tokenExpiresAt = Math.floor(Date.now() / 1000 + responseBody.expires_in);
+      }
+
+      return 'Login success';
     } catch (err) {
-      logger.debug(err.body);
-      logger.debug(err);
-      return Promise.reject(err.message);
+      throw err.message;
     }
   }
 
-  public logout(): Promise<string> {
-    return Promise.resolve('OK');
+  public async logout(): Promise<string> {
+    return 'OK';
   }
 
   public async getVehicles(): Promise<Array<Vehicle>> {
     if (this.session.accessToken === undefined) {
-      return Promise.reject('Token not set');
+      throw 'Token not set';
     }
 
     const response = await got(`${EU_BASE_URL}/api/v1/spa/vehicles`, {
@@ -208,7 +247,7 @@ export class EuropeanController extends SessionController {
       logger.debug(`Added vehicle ${vehicleConfig.id}`);
     });
 
-    return Promise.resolve(this.vehicles);
+    return this.vehicles;
   }
 
   // TODO: type this or replace it with a normal loop

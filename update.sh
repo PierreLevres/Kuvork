@@ -1,4 +1,3 @@
 sudo tsc
 sudo npm run-script build
-node debug.js 
-
+LOG_LEVEL=debug node debug.js 

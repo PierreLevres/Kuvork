@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="616ba38e-b593-47c9-8aba-4c26dc980447" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="5ef84275-f6af-480b-94d9-07aab8ebd0c8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/bluelinky.spec.ts_" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/controller.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/controller.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/util.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/util.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__tests__/vehicle.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/__tests__/vehicle.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.ts" beforeDir="false" afterPath="$PROJECT_DIR$/debug.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/for Kia-lib-constants-europe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/america.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/canada.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/europe.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/american.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/canadian.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/controllers/european.controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/interfaces/american.interfaces.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/interfaces/common.interfaces.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/interfaces/european.interfaces.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/logger.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/util.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vehicles/american.vehicle.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vehicles/canadian.vehicle.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vehicles/european.vehicle.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/vehicles/vehicle.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/rollup.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,8 +40,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="ProjectId" id="1elcdcD6LZYjCa8JjZAlXmSIDAp" />
+  <component name="ProjectId" id="1eoF6XJYBNeu6lVTizQzbe0sUPw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -21,19 +50,195 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="616ba38e-b593-47c9-8aba-4c26dc980447" name="Default Changelist" comment="" />
-      <created>1594899708491</created>
+      <changelist id="5ef84275-f6af-480b-94d9-07aab8ebd0c8" name="Default Changelist" comment="" />
+      <created>1594979863556</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1594899708491</updated>
+      <updated>1594979863556</updated>
     </task>
+    <task id="LOCAL-00001" summary="Changed from Hyundai constants to Kia constants">
+      <created>1594981203043</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1594981203043</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changed from Hyundai constants to Kia constants">
+      <created>1594981859174</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594981859174</updated>
+    </task>
+    <task id="LOCAL-00003" summary="publishing">
+      <created>1594987351633</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594987351633</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added EVBatteryCharge (SoC)">
+      <created>1595075380163</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595075380163</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added EVBatteryCharge (SoC)">
+      <created>1595075985661</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1595075985661</updated>
+    </task>
+    <task id="LOCAL-00006" summary="patched bug in 00H and 01H">
+      <created>1595076540273</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595076540273</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Support for Kia in Canada. Kia-Hyundai differences only in constants files. Not in code anymore.&#10;Entered extra (unparsed) option in debug.js">
+      <created>1595935718457</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1595935718458</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Support for Kia in Canada. Kia-Hyundai differences only in constants files. Not in code anymore.&#10;Entered extra (unparsed) option in debug.js">
+      <created>1595935897300</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1595935897300</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Support for Kia in Canada. Kia-Hyundai differences only in constants files. Not in code anymore.&#10;Entered extra (unparsed) option in debug.js">
+      <created>1595936104925</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1595936104925</updated>
+    </task>
+    <task id="LOCAL-00010" summary="made evstatus optional">
+      <created>1596534675408</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1596534675408</updated>
+    </task>
+    <task id="LOCAL-00011" summary="change for location API in eg the Niro plugin hybrid">
+      <created>1596552275321</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1596552275321</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added start and stop charging calls for (PH)EVs'">
+      <created>1598880824552</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1598880824552</updated>
+    </task>
+    <task id="LOCAL-00013" summary="corrected bugs according to issue 63 of BlueLinky&#10;renamed EV battery status to batteryChargeHV">
+      <created>1599722320042</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1599722320042</updated>
+    </task>
+    <task id="LOCAL-00014" summary="corrected bugs according to issue 63 of BlueLinky&#10;renamed EV battery status to batteryChargeHV">
+      <created>1599722356105</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1599722356105</updated>
+    </task>
+    <task id="LOCAL-00015" summary="bumped up to Bluelinky 5.2.0:&#10;Add error event and update tests&#10;Add charge control to eu vehicles&#10;Make refresh_token work in EU controller&#10;Unify expiry for control token&#10;Enhance status call&#10;Update rollup plugins&#10;Fix consistency for async return values">
+      <created>1599890927545</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1599890927545</updated>
+    </task>
+    <task id="LOCAL-00016" summary="New call for unparsed status">
+      <created>1600154918958</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1600154918958</updated>
+    </task>
+    <task id="LOCAL-00017" summary="bumped up to Bluelinky 5.2.0:&#10;Add error event and update tests&#10;Add charge control to eu vehicles&#10;Make refresh_token work in EU controller&#10;Unify expiry for control token&#10;Enhance status call&#10;Update rollup plugins&#10;Fix consistency for async return values">
+      <created>1600154993140</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1600154993140</updated>
+    </task>
+    <task id="LOCAL-00018" summary="full status request (EU only) added">
+      <created>1609067455358</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1609067455359</updated>
+    </task>
+    <task id="LOCAL-00019" summary="full status request (EU only) added">
+      <created>1609067542122</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609067542122</updated>
+    </task>
+    <task id="LOCAL-00020" summary="full status request (EU only) added, bumped up in sync with bluelinky lib">
+      <created>1612034371843</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1612034371844</updated>
+    </task>
+    <task id="LOCAL-00021" summary="full status request (EU only) added, bumped up in sync with bluelinky lib">
+      <created>1612034475782</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1612034475782</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed from Hyundai constants to Kia constants" />
+    <MESSAGE value="Changed from Hyundai constants to Kia constants, all relevant constants moved to constants/europe.ts" />
+    <MESSAGE value="publishing" />
+    <MESSAGE value="added EVBatteryCharge (SoC)" />
+    <MESSAGE value="patched bug in 00H and 01H" />
+    <MESSAGE value="Support for Kia in Canada. Kia-Hyundai differences only in constants files. Not in code anymore.&#10;Entered extra (unparsed) option in debug.js" />
+    <MESSAGE value="made evstatus optional" />
+    <MESSAGE value="change for location API in eg the Niro plugin hybrid" />
+    <MESSAGE value="added start and stop charging calls for (PH)EVs'" />
+    <MESSAGE value="corrected bugs according to issue 63 of BlueLinky&#10;renamed EV battery status to batteryChargeHV" />
+    <MESSAGE value="New call for unparsed status" />
+    <MESSAGE value="bumped up to Bluelinky 5.2.0:&#10;Add error event and update tests&#10;Add charge control to eu vehicles&#10;Make refresh_token work in EU controller&#10;Unify expiry for control token&#10;Enhance status call&#10;Update rollup plugins&#10;Fix consistency for async return values" />
+    <MESSAGE value="full status request (EU only) added" />
+    <MESSAGE value="full status request (EU only) added, bumped up in sync with bluelinky lib" />
+    <option name="LAST_COMMIT_MESSAGE" value="full status request (EU only) added, bumped up in sync with bluelinky lib" />
   </component>
 </project>
