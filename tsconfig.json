@@ -2,7 +2,6 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "target": "es6",
-    "module": "es2015",
     "strict": true,
     "sourceMap": true,
     "noImplicitAny": false,
@@ -20,7 +19,7 @@
     ]
   },
   "include": [
-    "lib"
+    "src"
   ],
   "exclude": [
     "node_modules"
