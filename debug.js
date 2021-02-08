@@ -53,6 +53,7 @@ const createInstance = region => {
   const client = new BlueLinky({
     username,
     password,
+    vin,
     region: region,
     pin,
     deviceUuid,
@@ -99,6 +100,13 @@ async function performCommand(command) {
           parsed: true,
         });
         console.log('status : ' + JSON.stringify(status, null, 2));
+        break;
+      case 'statusU':
+        const statusU = await vehicle.status({
+          refresh: false,
+          parsed: false,
+        });
+        console.log('status : ' + JSON.stringify(statusU, null, 2));
         break;
       case 'statusR':
         const statusR = await vehicle.status({

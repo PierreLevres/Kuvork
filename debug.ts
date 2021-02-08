@@ -53,8 +53,10 @@ const createInstance = region => {
   const client = new BlueLinky({
     username,
     password,
+    vin,
+    pin,
     region: region,
-    pin
+    deviceUuid
   });
   client.on('ready', onReadyHandler);
 };

@@ -1,5 +1,5 @@
-import { EU_CONSTANTS, EU_BASE_URL, EU_API_HOST, EU_CLIENT_ID } from './../constants/europe';
-import { BlueLinkyConfig, Session } from './../interfaces/common.interfaces';
+import { EU_CONSTANTS, EU_BASE_URL, EU_API_HOST, EU_CLIENT_ID } from '../constants/europe';
+import { BlueLinkyConfig, Session } from '../interfaces/common.interfaces';
 import * as pr from 'push-receiver';
 import got from 'got';
 import { ALL_ENDPOINTS } from '../constants';
@@ -17,7 +17,6 @@ export class EuropeanController extends SessionController {
   constructor(userConfig: BlueLinkyConfig) {
     super(userConfig);
     logger.debug('EU Controller created');
-
     this.session.deviceId = this.uuidv4();
   }
 
@@ -58,12 +57,12 @@ export class EuropeanController extends SessionController {
     formData.append('redirect_uri', 'https://www.getpostman.com/oauth2/callback'); // Oversight from Hyundai developers
     formData.append('refresh_token', this.session.refreshToken);
 
-    const response = await got(ALL_ENDPOINTS.EU.token, {
+    const response = await got(ALL_ENDPOINTS.EU[this.userConfig.brand].token, {
       method: 'POST',
       headers: {
-        'Authorization': EU_CONSTANTS.basicToken,
+        'Authorization': EU_CONSTANTS[this.userConfig.brand].basicToken,
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Host': EU_API_HOST,
+        'Host': EU_API_HOST[this.userConfig.brand],
         'Connection': 'Keep-Alive',
         'Accept-Encoding': 'gzip',
         'User-Agent': 'okhttp/3.10.0',
@@ -90,7 +89,7 @@ export class EuropeanController extends SessionController {
       throw 'Token not set';
     }
 
-    const response = await got(`${EU_BASE_URL}/api/v1/user/pin`, {
+    const response = await got(`${EU_BASE_URL[this.userConfig.brand]}/api/v1/user/pin`, {
       method: 'PUT',
       headers: {
         'Authorization': this.session.accessToken,
@@ -102,7 +101,6 @@ export class EuropeanController extends SessionController {
       },
       json: true,
     });
-
     this.session.controlToken = 'Bearer ' + response.body.controlToken;
     this.session.controlTokenExpiresAt = Math.floor(Date.now() / 1000 + response.body.expiresTime);
     return 'PIN entered OK, The pin is valid for 10 minutes';
@@ -112,12 +110,10 @@ export class EuropeanController extends SessionController {
     try {
       // request cookie via got and store it to the cookieJar
       const cookieJar = new CookieJar();
-      await got(ALL_ENDPOINTS.EU.session, { cookieJar });
-
+      await got(ALL_ENDPOINTS.EU[this.userConfig.brand].session, { cookieJar });
       // required by the api to set lang
-      await got(ALL_ENDPOINTS.EU.language, { method: 'POST', body: '{"lang":"en"}', cookieJar });
-
-      const authCodeResponse = await got(ALL_ENDPOINTS.EU.login, {
+      await got(ALL_ENDPOINTS.EU[this.userConfig.brand].language, { method: 'POST', body: '{"lang":"en"}', cookieJar });
+      const authCodeResponse = await got(ALL_ENDPOINTS.EU[this.userConfig.brand].login, {
         method: 'POST',
         json: true,
         body: {
@@ -126,7 +122,6 @@ export class EuropeanController extends SessionController {
         },
         cookieJar,
       });
-
       logger.debug(authCodeResponse.body);
       let authorizationCode;
       if (authCodeResponse) {
@@ -138,13 +133,14 @@ export class EuropeanController extends SessionController {
         }
       }
 
-      const credentials = await pr.register(EU_CONSTANTS.GCMSenderID);
-      const notificationReponse = await got(`${EU_BASE_URL}/api/v1/spa/notifications/register`, {
+      const credentials = await pr.register(EU_CONSTANTS[this.userConfig.brand].GCMSenderID);
+
+      const notificationReponse = await got(`${EU_BASE_URL[this.userConfig.brand]}/api/v1/spa/notifications/register`, {
         method: 'POST',
         headers: {
-          'ccsp-service-id': EU_CLIENT_ID,
+          'ccsp-service-id': EU_CLIENT_ID[this.userConfig.brand],
           'Content-Type': 'application/json;charset=UTF-8',
-          'Host': EU_API_HOST,
+          'Host': EU_API_HOST[this.userConfig.brand],
           'Connection': 'Keep-Alive',
           'Accept-Encoding': 'gzip',
           'User-Agent': 'okhttp/3.10.0',
@@ -156,22 +152,22 @@ export class EuropeanController extends SessionController {
         },
         json: true,
       });
-
+      
       if (notificationReponse) {
         this.session.deviceId = notificationReponse.body.resMsg.deviceId;
       }
-
+      logger.debug(this.session.deviceId);
       const formData = new URLSearchParams();
       formData.append('grant_type', 'authorization_code');
-      formData.append('redirect_uri', ALL_ENDPOINTS.EU.redirectUri);
+      formData.append('redirect_uri', ALL_ENDPOINTS.EU[this.userConfig.brand].redirectUri);
       formData.append('code', authorizationCode);
 
-      const response = await got(ALL_ENDPOINTS.EU.token, {
+      const response = await got(ALL_ENDPOINTS.EU[this.userConfig.brand].token, {
         method: 'POST',
         headers: {
-          'Authorization': EU_CONSTANTS.basicToken,
+          'Authorization': EU_CONSTANTS[this.userConfig.brand].basicToken,
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Host': EU_API_HOST,
+          'Host': EU_API_HOST[this.userConfig.brand],
           'Connection': 'Keep-Alive',
           'Accept-Encoding': 'gzip',
           'User-Agent': 'okhttp/3.10.0',
@@ -207,7 +203,7 @@ export class EuropeanController extends SessionController {
       throw 'Token not set';
     }
 
-    const response = await got(`${EU_BASE_URL}/api/v1/spa/vehicles`, {
+    const response = await got(`${EU_BASE_URL[this.userConfig.brand]}/api/v1/spa/vehicles`, {
       method: 'GET',
       headers: {
         'Authorization': this.session.accessToken,
@@ -220,7 +216,7 @@ export class EuropeanController extends SessionController {
 
     await this.asyncForEach(response.body.resMsg.vehicles, async v => {
       const vehicleProfileReponse = await got(
-        `${EU_BASE_URL}/api/v1/spa/vehicles/${v.vehicleId}/profile`,
+        `${EU_BASE_URL[this.userConfig.brand]}/api/v1/spa/vehicles/${v.vehicleId}/profile`,
         {
           method: 'GET',
           headers: {
