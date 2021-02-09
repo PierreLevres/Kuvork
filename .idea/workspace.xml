@@ -3,15 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5ef84275-f6af-480b-94d9-07aab8ebd0c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug-extended.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/debug.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.ts" beforeDir="false" afterPath="$PROJECT_DIR$/debug.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/canada.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/canada.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/europe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/europe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/canadian.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/canadian.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/european.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/european.controller.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/common.interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/common.interfaces.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vehicles/canadian.vehicle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicles/canadian.vehicle.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vehicles/european.vehicle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicles/european.vehicle.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vehicles/vehicle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicles/vehicle.ts" afterDir="false" />
@@ -204,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612034475782</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="development - Kia and Hyundai in 1 app">
+      <created>1612815145734</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1612815145734</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -44,7 +44,7 @@ export abstract class Vehicle {
     pin: undefined,
     vin: undefined,
     vehicleId: undefined,
-    brand: 0,
+    brandIndex: 0,
   };
 
   constructor(public vehicleConfig: VehicleRegisterOptions, public controller: SessionController) {

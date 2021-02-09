@@ -20,18 +20,18 @@ class BlueLinky extends EventEmitter {
     pin: '1234',
     vin: '',
     vehicleId: undefined,
-    brand: 0,
+    brandIndex: 0,
   };
 
   constructor(config: BlueLinkyConfig) {
     super();
 // brand deduction: VIN numbers of KIA are KNA/KNC/KNE
-    this.config.brand = 0;
-    config.brand = 0;
+    this.config.brandIndex = 0;
+    config.brandIndex = 0;
     const vin = config.vin ?? "AH" ;
     if (vin.charAt(1) == 'N') {
-      this.config.brand = 1 
-      config.brand = 1; 
+      this.config.brandIndex = 1 
+      config.brandIndex = 1; 
     }
     switch (config.region) {
       case REGIONS.EU:

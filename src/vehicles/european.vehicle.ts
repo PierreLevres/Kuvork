@@ -40,7 +40,7 @@ export default class EuropeanVehicle extends Vehicle {
   public async start(config: VehicleClimateOptions): Promise<string> {
     await this.checkControlToken();
     const response = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/temperature`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/temperature`,
       {
         method: 'POST',
         body: {
@@ -70,7 +70,7 @@ export default class EuropeanVehicle extends Vehicle {
   public async stop(): Promise<string> {
     await this.checkControlToken();
     const response = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/temperature`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/temperature`,
       {
         method: 'POST',
         body: {
@@ -100,7 +100,7 @@ export default class EuropeanVehicle extends Vehicle {
   public async lock(): Promise<string> {
     await this.checkControlToken();
     const response = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/door`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/door`,
       {
         method: 'POST',
         headers: {
@@ -127,7 +127,7 @@ export default class EuropeanVehicle extends Vehicle {
   public async unlock(): Promise<string> {
     await this.checkControlToken();
     const response = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/door`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/door`,
       {
         method: 'POST',
         headers: {
@@ -162,7 +162,7 @@ export default class EuropeanVehicle extends Vehicle {
     await this.checkControlToken();
 
     const cachedResponse = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/status/latest`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/status/latest`,
       {
         method: 'GET',
         headers: {
@@ -178,7 +178,7 @@ export default class EuropeanVehicle extends Vehicle {
 
     if(statusConfig.refresh) {
       const statusResponse = await got(
-        `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/status`,
+        `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/status`,
         {
           method: 'GET',
           headers: {
@@ -192,7 +192,7 @@ export default class EuropeanVehicle extends Vehicle {
       fullStatus.vehicleStatus = statusResponse.body.resMsg;
 
       const locationResponse = await got(
-        `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/location`,
+        `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/location`,
         {
           method: 'GET',
           headers: {
@@ -223,7 +223,7 @@ export default class EuropeanVehicle extends Vehicle {
     const cacheString = statusConfig.refresh ? '' : '/latest';
 
     const response = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/status${cacheString}`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/status${cacheString}`,
       {
         method: 'GET',
         headers: {
@@ -286,7 +286,7 @@ export default class EuropeanVehicle extends Vehicle {
   public async odometer(): Promise<VehicleOdometer | null> {
     await this.checkControlToken();
     const response = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/status/latest`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/status/latest`,
       {
         method: 'GET',
         headers: {
@@ -305,7 +305,7 @@ export default class EuropeanVehicle extends Vehicle {
   public async location(): Promise<VehicleLocation> {
     await this.checkControlToken();
     const response = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/location`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/location`,
       {
         method: 'GET',
         headers: {
@@ -335,7 +335,7 @@ export default class EuropeanVehicle extends Vehicle {
   public async startCharge(): Promise<string> {
     await this.checkControlToken();
     const response = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/charge`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/charge`,
       {
         method: 'POST',
         headers: {
@@ -362,7 +362,7 @@ export default class EuropeanVehicle extends Vehicle {
   public async stopCharge(): Promise<string> {
     await this.checkControlToken();
     const response = await got(
-      `${EU_BASE_URL[this.userConfig.brand]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/charge`,
+      `${EU_BASE_URL[this.userConfig.brandIndex]}/api/v2/spa/vehicles/${this.vehicleConfig.id}/control/charge`,
       {
         method: 'POST',
         headers: {

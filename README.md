@@ -1,6 +1,7 @@
 # KuvoRK
 
 An unoffcial nodejs API wrapper for European EV with KiaUVO forked from Hyundai BlueLink, Bluelinky project
+Serves both Kia and Hyundai in Europe and Canada. Serves Hyundai in US.
 
 [![CI](https://img.shields.io/circleci/build/github/Hacksore/bluelinky.svg)](https://circleci.com/gh/Hacksore/bluelinky/tree/master)
 [![npm](https://img.shields.io/npm/v/bluelinky.svg)](https://www.npmjs.com/package/bluelinky)
@@ -20,6 +21,7 @@ const client = new BlueLinky({
   password: 'hunter1',
   region: 'US',
   pin: '1234'
+  vin: 'KNACC2435634592'
 });
 
 client.on('ready', async () => {
@@ -32,6 +34,7 @@ client.on('ready', async () => {
 
 ## Documentation
 Checkout out the [bluelinky-docs](https://hacksore.github.io/bluelinky-docs/) for more info.
+VIN in config.json or code is optional. When VIN is set, the second characater indicates brand. Only when second character = 'N' indicates KIA other char, or not set, Hyundai endpoints are used. 
 
 ## Supported Features
 - Lock
@@ -42,11 +45,17 @@ Checkout out the [bluelinky-docs](https://hacksore.github.io/bluelinky-docs/) fo
 
 ## Supported Regions
 | [Regions](https://github.com/Hacksore/bluelinky/wiki/Regions) | Current Status |
-|-----------|--------------|
+
+|-----------|-Hyundai---KIa|
+
 | USA       | ✅      |
-| Canada    | ✅      |
-| Europe    | ✅      |
+
+| Canada    | ✅    ✅ |
+
+| Europe    | ✅    ✅ |
+
 | Korea     | ▯▯▯▯▯▯  |
+
 | Australia | [See #9](https://github.com/Hacksore/bluelinky/issues/9)  |
 
 ## Show your support
