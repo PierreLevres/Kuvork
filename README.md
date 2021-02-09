@@ -44,19 +44,16 @@ VIN in config.json or code is optional. When VIN is set, the second characater i
 - Status
 
 ## Supported Regions
+```
 | [Regions](https://github.com/Hacksore/bluelinky/wiki/Regions) | Current Status |
 
-|-----------|-Hyundai---KIa|
-
-| USA       | ✅      |
-
-| Canada    | ✅    ✅ |
-
-| Europe    | ✅    ✅ |
-
-| Korea     | ▯▯▯▯▯▯  |
-
-| Australia | [See #9](https://github.com/Hacksore/bluelinky/issues/9)  |
+|-----------|-Hyundai---KIa |
+| USA       | ✅           |
+| Canada    | ✅        ✅ |
+| Europe    | ✅        ✅ |
+| Korea     | ▯▯▯▯▯▯      | 
+| Australia | [See #9](https://github.com/Hacksore/bluelinky/issues/9)   |
+```
 
 ## Show your support
 

@@ -7,7 +7,7 @@ export interface BlueLinkyConfig {
   pin: string | undefined;
   vin?: string | undefined;
   vehicleId?: string | undefined;
-  brand: number;
+  brandIndex: number;
 }
 
 export interface BluelinkVehicle {
