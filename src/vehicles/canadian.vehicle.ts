@@ -41,7 +41,7 @@ export default class CanadianVehicle extends Vehicle {
     };
     logger.debug('Begin status request, polling car: ' + input.refresh);
     try {
-      const endpoint = statusConfig.refresh ? CA_ENDPOINTS[this.userConfig.brandIndex].remoteStatus : CA_ENDPOINTS[this.userConfig.brandIndex].status;
+      const endpoint = statusConfig.refresh ? CA_ENDPOINTS[this.userConfig.brand].remoteStatus : CA_ENDPOINTS[this.userConfig.brand].status;
       const response = await this.request(endpoint, {});
       const vehicleStatus = response.result;
 
@@ -105,7 +105,7 @@ export default class CanadianVehicle extends Vehicle {
     try {
       const preAuth = await this.getPreAuth();
       // assuming the API returns a bad status code for failed attempts
-      await this.request(CA_ENDPOINTS[this.userConfig.brandIndex].lock, {}, { pAuth: preAuth });
+      await this.request(CA_ENDPOINTS[this.userConfig.brand].lock, {}, { pAuth: preAuth });
       return 'Lock successful';
     } catch (err) {
       throw err.message;
@@ -116,7 +116,7 @@ export default class CanadianVehicle extends Vehicle {
     logger.debug('Begin unlock request');
     try {
       const preAuth = await this.getPreAuth();
-      await this.request(CA_ENDPOINTS[this.userConfig.brandIndex].unlock, {}, { pAuth: preAuth });
+      await this.request(CA_ENDPOINTS[this.userConfig.brand].unlock, {}, { pAuth: preAuth });
       return 'Unlock successful';
     } catch (err) {
       throw err.message;
@@ -150,7 +150,7 @@ export default class CanadianVehicle extends Vehicle {
       }
 
       const preAuth = await this.getPreAuth();
-      const response = await this.request(CA_ENDPOINTS[this.userConfig.brandIndex].start, body, { pAuth: preAuth });
+      const response = await this.request(CA_ENDPOINTS[this.userConfig.brand].start, body, { pAuth: preAuth });
 
       logger.debug(response);
 
@@ -168,7 +168,7 @@ export default class CanadianVehicle extends Vehicle {
     logger.debug('Begin stop request');
     try {
       const preAuth = await this.getPreAuth();
-      const response = await this.request(CA_ENDPOINTS[this.userConfig.brandIndex].stop, {
+      const response = await this.request(CA_ENDPOINTS[this.userConfig.brand].stop, {
         pAuth: preAuth,
       });
       return response;
@@ -183,7 +183,7 @@ export default class CanadianVehicle extends Vehicle {
     try {
       const preAuth = await this.getPreAuth();
       const response = await this.request(
-        CA_ENDPOINTS[this.userConfig.brandIndex].hornlight,
+        CA_ENDPOINTS[this.userConfig.brand].hornlight,
         { horn: withHorn },
         { pAuth: preAuth }
       );
@@ -202,7 +202,7 @@ export default class CanadianVehicle extends Vehicle {
     logger.debug('Begin locate request');
     try {
       const preAuth = await this.getPreAuth();
-      const response = await this.request(CA_ENDPOINTS[this.userConfig.brandIndex].locate, {}, { pAuth: preAuth });
+      const response = await this.request(CA_ENDPOINTS[this.userConfig.brand].locate, {}, { pAuth: preAuth });
       this._location = response.result as VehicleLocation;
       return this._location;
     } catch (err) {
@@ -217,7 +217,7 @@ export default class CanadianVehicle extends Vehicle {
   private async getPreAuth(): Promise<string> {
     logger.info('Begin pre-authentication');
     try {
-      const response = await this.request(CA_ENDPOINTS[this.userConfig.brandIndex].verifyPin, {});
+      const response = await this.request(CA_ENDPOINTS[this.userConfig.brand].verifyPin, {});
       return response.result.pAuth;
     } catch (err) {
       throw 'error: ' + err;

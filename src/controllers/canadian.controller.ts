@@ -39,7 +39,7 @@ export class CanadianController extends SessionController {
   public async login(): Promise<string> {
     logger.info('Begin login request');
     try {
-      const response = await this.request(CA_ENDPOINTS[this.userConfig.brandIndex].login, {
+      const response = await this.request(CA_ENDPOINTS[this.userConfig.brand].login, {
         loginId: this.userConfig.username,
         password: this.userConfig.password,
       });
@@ -63,7 +63,7 @@ export class CanadianController extends SessionController {
   async getVehicles(): Promise<Array<Vehicle>> {
     logger.info('Begin getVehicleList request');
     try {
-      const response = await this.request(CA_ENDPOINTS[this.userConfig.brandIndex].vehicleList, {});
+      const response = await this.request(CA_ENDPOINTS[this.userConfig.brand].vehicleList, {});
 
       const data = response.result;
       if (data.vehicles === undefined) {
