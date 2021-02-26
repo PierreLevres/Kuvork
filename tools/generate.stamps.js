@@ -3,14 +3,9 @@ const { writeFileSync } = require('fs');
 const { getStamp } = require('./european.tools.js');
 
 const SIZE = 1000;
-const { join, resolve } = require('path');
-const { writeFileSync } = require('fs');
-const { getStamp } = require('./european.tools.js');
-
-
-#Hyundai:
-const APP_ID = '99cfff84-f4e2-4be8-a5ed-e5b755eb6581';
-#Kia:
+//Hyundai:
+//const APP_ID = '99cfff84-f4e2-4be8-a5ed-e5b755eb6581';
+//Kia:
 const APP_ID = '693a33fa-c117-43f2-ae3b-61a02d24f417';
 
 
