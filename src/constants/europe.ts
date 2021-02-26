@@ -25,3 +25,5 @@ export const EU_CONSTANTS = { 'H': {
     'Basic ZmRjODVjMDAtMGEyZi00YzY0LWJjYjQtMmNmYjE1MDA3MzBhOnNlY3JldA==',
   GCMSenderID: '199360397125',
 }};
+
+export const EU_APP_ID = { 'H': '99cfff84-f4e2-4be8-a5ed-e5b755eb6581', 'K':'693a33fa-c117-43f2-ae3b-61a02d24f417'};

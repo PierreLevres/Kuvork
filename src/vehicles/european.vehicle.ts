@@ -57,6 +57,7 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
+          'Stamp': await getStamp(),
         },
         json: true,
       }
@@ -87,6 +88,7 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
+          'Stamp': await getStamp(),
         },
         json: true,
       }
@@ -107,7 +109,8 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
-        },
+          'Stamp': await getStamp(),
+       },
         body: {
           action: 'close',
           deviceId: this.controller.session.deviceId,
@@ -134,6 +137,7 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
+          'Stamp': await getStamp(),
         },
         body: {
           action: 'open',
@@ -169,6 +173,7 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
+          'Stamp': await getStamp(),
         },
         json: true,
       }
@@ -185,6 +190,7 @@ export default class EuropeanVehicle extends Vehicle {
             'Authorization': this.controller.session.controlToken,
             'ccsp-device-id': this.controller.session.deviceId,
             'Content-Type': 'application/json',
+            'Stamp': await getStamp(),
           },
           json: true,
         }
@@ -199,6 +205,7 @@ export default class EuropeanVehicle extends Vehicle {
             'Authorization': this.controller.session.controlToken,
             'ccsp-device-id': this.controller.session.deviceId,
             'Content-Type': 'application/json',
+            'Stamp': await getStamp(),
           },
           json: true,
         }
@@ -230,6 +237,7 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
+          'Stamp': await getStamp(),
         },
         json: true,
       }
@@ -307,6 +315,7 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
+          'Stamp': await getStamp(),
         },
         json: true,
       }
@@ -326,6 +335,7 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
+          'Stamp': await getStamp(),
         },
         json: true,
       }
@@ -356,6 +366,7 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
+          'Stamp': await getStamp(),
         },
         body: {
           action: 'start',
@@ -383,6 +394,7 @@ export default class EuropeanVehicle extends Vehicle {
           'Authorization': this.controller.session.controlToken,
           'ccsp-device-id': this.controller.session.deviceId,
           'Content-Type': 'application/json',
+          'Stamp': await getStamp(),
         },
         body: {
           action: 'stop',
