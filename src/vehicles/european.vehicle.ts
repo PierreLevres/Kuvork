@@ -8,6 +8,7 @@ import {
   VehicleRegisterOptions,
   VehicleStatusOptions,
   RawVehicleStatus,
+  EVPlugTypes,
 } from '../interfaces/common.interfaces';
 import got from 'got';
 
