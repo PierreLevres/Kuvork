@@ -16,6 +16,7 @@ import { Vehicle } from './vehicle';
 import { EuropeanController } from '../controllers/european.controller';
 import { celciusToTempCode, tempCodeToCelsius } from '../util';
 import { EU_BASE_URL } from '../constants/europe';
+import { getStamp } from '../tools/european.tools';
 
 export default class EuropeanVehicle extends Vehicle {
   public region = REGIONS.EU;
