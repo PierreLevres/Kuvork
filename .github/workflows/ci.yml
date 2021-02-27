@@ -26,8 +26,8 @@ jobs:
           path: ./kia.european.token.collection.ts
       - name: Display structure of downloaded files
         run: ls kia*.* -lia
-      - name: Display structure of downloaded files
-        run: cat /kia.european.token.collection.ts
+      - name: Display downloaded files
+        run: cat ./kia.european.token.collection.ts
         
       - name: Download hyundai file
         uses: actions/download-artifact@v2
