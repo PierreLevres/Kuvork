@@ -9,7 +9,7 @@ jobs:
   stamps:
     runs-on: ubuntu-latest
     steps:
-#      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -34,6 +34,7 @@ jobs:
         with:
           name: hyundai
           path: bla.txt
+      - uses: actions/checkin@v2
 
       # two articacts are saved. Put them in the repo 
   #test:
