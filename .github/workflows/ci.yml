@@ -13,9 +13,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - echo "the project directory is - $CI_PROJECT_DIR"
-      - cat $CI_PROJECT_DIR/README.md ; echo
-      - echo "and where am I? - $PWD"
+      - echo: "the project directory is - $CI_PROJECT_DIR"
+      - cat: $CI_PROJECT_DIR/README.md ; echo
+      - echo: "and where am I? - $PWD"
       - run: npm run stamps
       
   test:
