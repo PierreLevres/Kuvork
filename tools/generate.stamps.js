@@ -20,8 +20,9 @@ const run = async (AppId, Brand) => {
     }
   }
 
-  writeFileSync(join(resolve('..'), 'src', 'tools', Brand+'.european.token.collection.ts'), `export default ${JSON.stringify(array)}`);
-}
+  //writeFileSync(join(resolve('.'), 'src', 'tools', Brand+'.european.token.collection.ts'), `export default ${JSON.stringify(array)}`);
+  writeFileSync(join(resolve('.'), Brand+'.european.token.collection.ts'), `export default ${JSON.stringify(array)}`);}
+
 
 run(H_APP_ID,'hyundai').catch((err) => console.error(err));
 run(K_APP_ID,'kia').catch((err) => console.error(err));
