@@ -13,10 +13,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - echo: "the project directory is - $CI_PROJECT_DIR"
-      - cat: $CI_PROJECT_DIR/README.md ; echo
-      - echo: "and where am I? - $PWD"
       - run: npm run stamps
+      # move the generated files to the right place in the repo
       
   test:
     runs-on: ubuntu-latest
