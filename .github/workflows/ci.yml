@@ -14,7 +14,8 @@ jobs:
         with:
           node-version: 12
       - run: npm run stamps
-
+      # move the generated files to the right place in the repo
+      
   test:
     runs-on: ubuntu-latest
     steps:
