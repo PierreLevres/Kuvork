@@ -14,29 +14,38 @@ jobs:
         with:
           node-version: 12
       - run: npm run stamps
-      - name: Upload files
+      - name: Upload hyundai file
+        uses: actions/download-artifact@v2
+        with:
+          name: hyundai
+          path: /home/runner/work/Kuvork/Kuvork/hyundai.european.token.collection.ts
+      - name: Upload hyundai file
         uses: actions/upload-artifact@v2
+        with:
+          name: hyundai
+          path: hyundai.european.token.collection.ts
+          
+      - name: Upload kia file
+        uses: actions/download-artifact@v2
         with:
           name: kia
           path: /home/runner/work/Kuvork/Kuvork/kia.european.token.collection.ts
-
-      # move the generated files to the right place in the repo
-      
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: npm ci
-      - run: npm test
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: npm ci
-      - run: npm run build
+      # two articacts are saved. Put them in the repo 
+  #test:
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - uses: actions/checkout@v2
+  #    - uses: actions/setup-node@v1
+  #      with:
+  #        node-version: 12
+  #    - run: npm ci
+  #    - run: npm test
+  #build:
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - uses: actions/checkout@v2
+  #    - uses: actions/setup-node@v1
+  #      with:
+  #        node-version: 12
+  #    - run: npm ci
+  #    - run: npm run build
