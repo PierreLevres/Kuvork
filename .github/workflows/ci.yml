@@ -15,16 +15,15 @@ jobs:
           node-version: 12
       - run: npm run stamps
       - name: Upload hyundai file
-        uses: actions/download-artifact@v2
-        with:
-          name: hyundai
-          path: /home/runner/work/Kuvork/Kuvork/hyundai.european.token.collection.ts
-      - name: Upload hyundai file
         uses: actions/upload-artifact@v2
         with:
           name: hyundai
+          path: /home/runner/work/Kuvork/Kuvork/hyundai.european.token.collection.ts
+      - name: Download hyundai file
+        uses: actions/download-artifact@v2
+        with:
+          name: hyundai
           path: hyundai.european.token.collection.ts
-          
       - name: Upload kia file
         uses: actions/download-artifact@v2
         with:
