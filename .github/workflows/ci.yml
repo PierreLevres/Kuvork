@@ -6,50 +6,21 @@ on:
       - master
 
 jobs:
-  stamps:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm run stamps
-      - name: Upload files
-        uses: actions/upload-artifact@v2
+      - run: npm ci
+      - run: npm test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
         with:
-          name: hyundai
-          path: ./hyundai.european.token.collection.ts
-      - name: Upload files
-        uses: actions/upload-artifact@v2
-        with:
-          name: kia
-          path: ./kia.european.token.collection.ts
-      - name: Display structure of downloaded files
-        run: ls kia*.* -lia
-      - name: Display downloaded files
-        run: cat ./kia.european.token.collection.ts
-        
-      - name: Download hyundai file
-        uses: actions/download-artifact@v2
-        with:
-          name: hyundai
-          path: bla.txt
-      # two articacts are saved. Put them in the repo 
-  #test:
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - uses: actions/checkout@v2
-  #    - uses: actions/setup-node@v1
-  #      with:
-  #        node-version: 12
-  #    - run: npm ci
-  #    - run: npm test
-  #build:
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - uses: actions/checkout@v2
-  #    - uses: actions/setup-node@v1
-  #      with:
-  #        node-version: 12
-  #    - run: npm ci
-  #    - run: npm run build
+          node-version: 12
+      - run: npm ci
+      - run: npm run build
