@@ -18,14 +18,17 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: hyundai
-          path: /home/runner/work/Kuvork/Kuvork/hyundai.european.token.collection.ts
+          path: ./hyundai.european.token.collection.ts
       - name: Upload files
         uses: actions/upload-artifact@v2
         with:
           name: kia
-          path: /home/runner/work/Kuvork/Kuvork/kia.european.token.collection.ts
+          path: ./kia.european.token.collection.ts
       - name: Display structure of downloaded files
-        run: ls -R -lia
+        run: ls kia*.* -lia
+      - name: Display structure of downloaded files
+        run: cat /kia.european.token.collection.ts
+        
       - name: Download hyundai file
         uses: actions/download-artifact@v2
         with:
