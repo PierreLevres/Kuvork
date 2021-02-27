@@ -25,7 +25,7 @@ jobs:
           name: kia
           path: /home/runner/work/Kuvork/Kuvork/kia.european.token.collection.ts
       - name: Display structure of downloaded files
-          run: ls -R
+        run: ls -R
       - name: Download hyundai file
         uses: actions/download-artifact@v2
         with:
