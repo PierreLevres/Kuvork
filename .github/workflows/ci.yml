@@ -28,7 +28,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: hyundai
-          path: src/tools/hyundai.european.token.collection.ts
+          path: bla.txt
 
       # two articacts are saved. Put them in the repo 
   #test:
