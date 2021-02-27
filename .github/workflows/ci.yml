@@ -14,6 +14,12 @@ jobs:
         with:
           node-version: 12
       - run: npm run stamps
+      - name: Upload files
+        uses: actions/upload-artifact@v2
+        with:
+          name: kia
+          path: /home/runner/work/Kuvork/Kuvork/kia.european.token.collection.ts
+
       # move the generated files to the right place in the repo
       
   test:
