@@ -34,8 +34,6 @@ jobs:
         with:
           name: hyundai
           path: bla.txt
-      - uses: actions/checkin@v2
-
       # two articacts are saved. Put them in the repo 
   #test:
   #  runs-on: ubuntu-latest
