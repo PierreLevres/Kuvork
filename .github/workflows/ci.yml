@@ -14,21 +14,22 @@ jobs:
         with:
           node-version: 12
       - run: npm run stamps
-      - name: Upload hyundai file
+      - name: Upload files
         uses: actions/upload-artifact@v2
         with:
           name: hyundai
           path: /home/runner/work/Kuvork/Kuvork/hyundai.european.token.collection.ts
+      - name: Upload files
+        uses: actions/upload-artifact@v2
+        with:
+          name: kia
+          path: /home/runner/work/Kuvork/Kuvork/kia.european.token.collection.ts      
       - name: Download hyundai file
         uses: actions/download-artifact@v2
         with:
           name: hyundai
-          path: hyundai.european.token.collection.ts
-      - name: Upload kia file
-        uses: actions/download-artifact@v2
-        with:
-          name: kia
-          path: /home/runner/work/Kuvork/Kuvork/kia.european.token.collection.ts
+          path: src/tools/hyundai.european.token.collection.ts
+
       # two articacts are saved. Put them in the repo 
   #test:
   #  runs-on: ubuntu-latest
