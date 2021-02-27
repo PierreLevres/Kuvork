@@ -1,0 +1,26 @@
+name: npm
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  stamps:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm run stamps
+      - name: Upload files
+        uses: actions/upload-artifact@v2
+        with:
+          name: hyundai
+          path: ./hyundai.european.token.collection.ts
+      - name: Upload files
+        uses: actions/upload-artifact@v2
+        with:
+          name: kia
+          path: ./kia.european.token.collection.ts
