@@ -21,6 +21,7 @@ const run = async (AppId, Brand) => {
   }
 
   //writeFileSync(join(resolve('.'), 'src', 'tools', Brand+'.european.token.collection.ts'), `export default ${JSON.stringify(array)}`);
+  console.log(join(resolve('.'), Brand+'.european.token.collection.ts'));
   writeFileSync(join(resolve('.'), Brand+'.european.token.collection.ts'), `export default ${JSON.stringify(array)}`);}
 
 
