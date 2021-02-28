@@ -20,19 +20,18 @@ class BlueLinky extends EventEmitter {
     pin: '1234',
     vin: '',
     vehicleId: undefined,
-    brand: 'H',
+    brand: '',
   };
 
   constructor(config: BlueLinkyConfig) {
     super();
-// brand deduction: VIN numbers of KIA are KNA/KNC/KNE
-    this.config.brand = 'H';
-    config.brand = 'H'; 
-    const vin = config.vin ?? "AH" ;
-    if (vin.charAt(1) == 'N') {
-      this.config.brand = 'K';
-      config.brand = 'K';
+    logger.debug(config.username);
+    if (config.brand === undefined) {
+      logger.debug('Brand not set, defaulting to H (Hyundai)');
+      config.brand = "H";
     }
+    logger.debug(config.brand);
+
     switch (config.region) {
       case REGIONS.EU:
         this.controller = new EuropeanController(config);
@@ -52,7 +51,7 @@ class BlueLinky extends EventEmitter {
       ...this.config,
       ...config,
     };
-    
+
     if (config.autoLogin === undefined) {
       this.config.autoLogin = true;
     }

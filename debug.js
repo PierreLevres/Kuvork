@@ -21,7 +21,7 @@ const apiCalls = [
 ];
 
 let vehicle;
-const { username, password, vin, pin, deviceUuid } = config;
+const { username, password, vin, pin, deviceUuid, brand } = config;
 
 const onReadyHandler = vehicles => {
   vehicle = vehicles[0];
@@ -57,6 +57,7 @@ const createInstance = region => {
     region: region,
     pin,
     deviceUuid,
+    brand,
   });
   client.on('ready', onReadyHandler);
 };

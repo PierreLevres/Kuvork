@@ -1,7 +1,7 @@
 # KuvoRK
 
 An unoffcial nodejs API wrapper for European EV with KiaUVO forked from Hyundai BlueLink, Bluelinky project
-Serves both Kia and Hyundai in Europe and Canada. Serves Hyundai in US.
+Serves both Kia and Hyundai in Europe and Canada. Serves Hyundai in US. 
 
 [![CI](https://img.shields.io/circleci/build/github/Hacksore/bluelinky.svg)](https://circleci.com/gh/Hacksore/bluelinky/tree/master)
 [![npm](https://img.shields.io/npm/v/bluelinky.svg)](https://www.npmjs.com/package/bluelinky)
@@ -9,7 +9,7 @@ Serves both Kia and Hyundai in Europe and Canada. Serves Hyundai in US.
 
 ## Install
 ```sh
-npm install bluelinky
+npm install kuvork
 ```
 
 ## Example
@@ -19,9 +19,10 @@ const BlueLinky = require('bluelinky');
 const client = new BlueLinky({
   username: 'someguy@example.com',
   password: 'hunter1',
-  region: 'US',
+  region: 'EU',
   pin: '1234'
   vin: 'KNACC2435634592'
+  brand: 'K'
 });
 
 client.on('ready', async () => {
@@ -34,7 +35,7 @@ client.on('ready', async () => {
 
 ## Documentation
 Checkout out the [bluelinky-docs](https://hacksore.github.io/bluelinky-docs/) for more info.
-VIN in config.json or code is optional. When VIN is set, the second characater indicates brand. Only when second character = 'N' indicates KIA other char, or not set, Hyundai endpoints are used. 
+Brand is not optional. Brand can be 'H' or 'K' for either Hyundai or Kia.
 
 ## Supported Features
 - Lock

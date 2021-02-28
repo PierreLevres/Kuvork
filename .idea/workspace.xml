@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5ef84275-f6af-480b-94d9-07aab8ebd0c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/debug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/european.tools.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/european.tools.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/generate.stamps.js" beforeDir="false" afterPath="$PROJECT_DIR$/tools/generate.stamps.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614434503943</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="new set of tokens">
+      <created>1614434788728</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1614434788728</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
