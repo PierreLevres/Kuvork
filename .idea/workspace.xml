@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5ef84275-f6af-480b-94d9-07aab8ebd0c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/hyundai.european.token.collection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/hyundai.european.token.collection.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/kia.european.token.collection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/kia.european.token.collection.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
