@@ -2,32 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ef84275-f6af-480b-94d9-07aab8ebd0c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tools/european.tools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/generate.stamps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/stamps.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/european.token.collection.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/app/app.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/arm64/libc.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/arm64/libdl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/arm64/liblog.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/arm64/libm.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/arm64/libnative-lib.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/armv7/libc.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/armv7/libdl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/armv7/liblog.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/armv7/libm.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/armv7/libnative-lib.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86/libc.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86/libdl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86/liblog.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86/libm.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86/libnative-lib.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86_64/libc.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86_64/libdl.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86_64/liblog.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86_64/libm.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/bin/lib/x86_64/libnative-lib.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/european.tools.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/generate.stamps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/europe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/europe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/european.tools.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/hyundai.european.token.collection.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/kia.european.token.collection.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +61,9 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/tools" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/tools" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -352,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614609563833</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="finalised 6.2.0">
+      <created>1614869692261</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1614869692261</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -390,6 +382,7 @@
     <MESSAGE value="new set of tokens" />
     <MESSAGE value="endpoint Kia and Huyndai by setting brand parameter in the bluelinky config" />
     <MESSAGE value="newly generated hyundai stamps" />
-    <option name="LAST_COMMIT_MESSAGE" value="newly generated hyundai stamps" />
+    <MESSAGE value="finalised 6.2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalised 6.2.0" />
   </component>
 </project>
