@@ -2,6 +2,10 @@ export const EU_API_HOST = { 'H':'prd.eu-ccapi.hyundai.com:8080','K':'prd.eu-cca
 export const EU_BASE_URL = { 'H':`https://${EU_API_HOST['H']}`,'K':`https://${EU_API_HOST['K']}`};
 export const EU_CLIENT_ID = { 'H':'6d477c38-3ca4-4cf3-9557-2a1929a94654','K':'fdc85c00-0a2f-4c64-bcb4-2cfb1500730a'}
 
+export type EULanguages = 'cs'|'da'|'nl'|'en'|'fi'|'fr'|'de'|'it'|'pl'|'hu'|'no'|'sk'|'es'|'sv';
+export const EU_LANGUAGES: EULanguages[] = ['cs', 'da', 'nl', 'en', 'fi', 'fr', 'de', 'it', 'pl', 'hu', 'no', 'sk', 'es', 'sv'];
+export const DEFAULT_LANGUAGE: EULanguages = 'en';
+
 export const EU_ENDPOINTS = {'H': {
   session: `${EU_BASE_URL['H']}/api/v1/user/oauth2/authorize?response_type=code&state=test&client_id=${EU_CLIENT_ID['H']}&redirect_uri=${EU_BASE_URL['H']}/api/v1/user/oauth2/redirect`,
   login: `${EU_BASE_URL['H']}/api/v1/user/signin`,
@@ -25,3 +29,4 @@ export const EU_CONSTANTS = { 'H': {
     'Basic ZmRjODVjMDAtMGEyZi00YzY0LWJjYjQtMmNmYjE1MDA3MzBhOnNlY3JldA==',
   GCMSenderID: '199360397125',
 }};
+

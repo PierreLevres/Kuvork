@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ef84275-f6af-480b-94d9-07aab8ebd0c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tools/european.tools.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/generate.stamps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/stamps.yml" beforeDir="false" />
+    <list default="true" id="5ef84275-f6af-480b-94d9-07aab8ebd0c8" name="Default Changelist" comment="use REGIONS enum in the config and default language setting (equals #108 in Bluelinky)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/europe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/europe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/european.tools.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/hyundai.european.token.collection.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/kia.european.token.collection.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/european.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/european.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/common.interfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/common.interfaces.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="upstream/develop" />
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -344,7 +345,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614869692261</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="finalised 6.2.1, new stamps generated">
+      <created>1614935452329</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1614935452329</updated>
+    </task>
+    <task id="LOCAL-00040" summary="finalised 6.2.1, new stamps generated">
+      <created>1614935619176</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1614935619176</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,6 +398,9 @@
     <MESSAGE value="endpoint Kia and Huyndai by setting brand parameter in the bluelinky config" />
     <MESSAGE value="newly generated hyundai stamps" />
     <MESSAGE value="finalised 6.2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalised 6.2.0" />
+    <MESSAGE value="finalised 6.2.1, new stamps generated" />
+    <MESSAGE value="use REGIONS enum in the config and default language setting (equals #108 in Bluelinky)" />
+    <option name="LAST_COMMIT_MESSAGE" value="use REGIONS enum in the config and default language setting (equals #108 in Bluelinky)" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

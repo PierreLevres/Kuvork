@@ -1,5 +1,5 @@
 import { AmericanController } from './controllers/american.controller';
-import { EuropeanController } from './controllers/european.controller';
+import { EuropeanController, EuropeBlueLinkyConfig } from './controllers/european.controller';
 import { CanadianController } from './controllers/canadian.controller';
 import { SessionController } from './controllers/controller';
 import { EventEmitter } from 'events';
@@ -23,7 +23,7 @@ class BlueLinky extends EventEmitter {
     brand: '',
   };
 
-  constructor(config: BlueLinkyConfig) {
+  constructor(config: BlueLinkyConfig|EuropeBlueLinkyConfig) {
     super();
     logger.debug(config.username);
     if (config.brand === undefined) {
