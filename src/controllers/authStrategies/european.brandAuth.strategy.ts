@@ -46,16 +46,14 @@ export class EuropeanBrandAuthStrategy implements AuthStrategy {
 			cookieJar,
 			headers: stdHeaders
 		});
-
-    await got(authUrl, {
-      searchParams: {
-        response_type: 'code',
-        client_id: serviceId,
-        redirect_uri: this.environment.endpoints.redirectUri,
-        state: 'ccsp',
-        lang: 'en'
-      }
+    const codeData = new URLSearchParams({
+      response_type: 'code',
+      client_id: serviceId,
+      redirect_uri: this.environment.endpoints.redirectUri,
+      state: 'ccsp',
+      lang: 'en'
     });
+    await got(authUrl, { body:codeData.toString() });
 
     const loginUrl = `${this.environment.idpUrl}/auth/account/signin`;
     const loginData = new URLSearchParams({
