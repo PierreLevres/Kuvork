@@ -268,7 +268,7 @@ export class EuropeanController extends SessionController<EuropeBlueLinkyConfig>
           'User-Agent': 'okhttp/3.10.0',
           //'grant_type': 'authorization_code',
           //'ccsp-application-id': this.environment.appId,
-          'Stamp': false, // await this.environment.stamp(),
+          'Stamp': 'false', // await this.environment.stamp(),
         },
         body: formData.toString(),
         cookieJar: authResult.cookies,
