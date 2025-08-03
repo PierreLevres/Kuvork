@@ -47,13 +47,14 @@ export class EuropeanBrandAuthStrategy implements AuthStrategy {
 			headers: stdHeaders
 		});
 
-    const authUrl = `${this.environment.idpUrl}/auth/api/v2/user/oauth2/authorize`;
     await got(authUrl, {
-      response_type: 'code',
-      client_id: serviceId,
-      redirect_uri: this.environment.endpoints.redirectUri, 
-      state: 'ccsp',
-      lang: 'en'
+      searchParams: {
+        response_type: 'code',
+        client_id: serviceId,
+        redirect_uri: this.environment.endpoints.redirectUri,
+        state: 'ccsp',
+        lang: 'en'
+      }
     });
 
     const loginUrl = `${this.environment.idpUrl}/auth/account/signin`;
