@@ -46,6 +46,8 @@ export class EuropeanBrandAuthStrategy implements AuthStrategy {
 			cookieJar,
 			headers: stdHeaders
 		});
+
+    const authUrl = `${this.environment.idpUrl}/auth/api/v2/user/oauth2/authorize`;
     const codeData = new URLSearchParams({
       response_type: 'code',
       client_id: serviceId,
