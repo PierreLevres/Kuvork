@@ -48,14 +48,13 @@ export class EuropeanBrandAuthStrategy implements AuthStrategy {
 		});
 
     const authUrl = `${this.environment.idpUrl}/auth/api/v2/user/oauth2/authorize`;
-    const params = {
+    await got(authUrl, {
       response_type: 'code',
       client_id: serviceId,
-      redirect_uri: this.environment.endpoints.redirectUri, // `${this.environment.baseUrl}/api/v1/user/oauth2/redirect`,
+      redirect_uri: this.environment.endpoints.redirectUri, 
       state: 'ccsp',
       lang: 'en'
-    };
-    await got(authUrl, { params });
+    });
 
     const loginUrl = `${this.environment.idpUrl}/auth/account/signin`;
     const loginData = new URLSearchParams({
@@ -63,7 +62,7 @@ export class EuropeanBrandAuthStrategy implements AuthStrategy {
       password: user.password,
       encryptedPassword: 'false',
       remember_me: 'false',
-      redirect_uri: this.environment.endpoints.redirectUri, //  `${this.environment.baseUrl}/api/v1/user/oauth2/redirect`,
+      redirect_uri: this.environment.endpoints.redirectUri, 
       state: 'ccsp',
       client_id: this.environment.clientId
     });
@@ -87,7 +86,7 @@ export class EuropeanBrandAuthStrategy implements AuthStrategy {
     const code = parsedUrl.searchParams.get('code');
     
 		if (!code) {
-			throw new Error(`@EuropeanBrandAuthStrategy.login: Cannot find the argument code in ${body.redirectUrl}.`);
+			throw new Error(`@EuropeanBrandAuthStrategy.login: Cannot find the argument code.`);
 		}
 		return {
 			code: code as Code,
