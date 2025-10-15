@@ -62,11 +62,10 @@ export class EuropeanController extends SessionController<EuropeBlueLinkyConfig>
     // Initialize brand-specific constants (URLs, IDs, etc.)
     if (this.userConfig.brand === 'kia') {
       this.LOGIN_FORM_HOST = 'https://idpconnect-eu.kia.com';
-      this.PUSH_TYPE = 'APNS';
     } else {
-      this.LOGIN_FORM_HOST = 'https://eu-account.hyundai.com';
-      this.PUSH_TYPE = 'GCM';
-    } 
+      this.LOGIN_FORM_HOST = 'https://idpconnect-eu.hyundai.com';
+    }
+    this.PUSH_TYPE = 'APNS';
     logger.debug('EU Controller created');
   }
 
@@ -163,20 +162,19 @@ export class EuropeanController extends SessionController<EuropeBlueLinkyConfig>
 
   public async login(): Promise<string> {
     //const stamp = await this.environment.stamp();
-    const username = this.userConfig.username !== undefined ? this.userConfig.username : '';
-    const password = this.userConfig.password !== undefined ? this.userConfig.password : '';
+    //const username = this.userConfig.username !== undefined ? this.userConfig.username : '';
+    //const password = this.userConfig.password !== undefined ? this.userConfig.password : '';
     await this.getDeviceId();
     //const sessionCookies = await this.getSessionCookies();
     await this.setSessionLanguage();
 
-    if (this.userConfig.brand === 'kia') {
-      // 📌 Kia EU: Use password as a refresh token to get access token directly
-      const refreshToken = this.userConfig.password;
-      this.session.refreshToken = refreshToken;
-      await this.refreshAccessToken();
-      return 'OK';
-    }
+    // 📌 Both brands: Use password as a refresh token to get access token directly
+    const refreshToken = this.userConfig.password;
+    this.session.refreshToken = refreshToken;
+    await this.refreshAccessToken();
+    return 'OK';
 
+    /*
     // Hyundai or Genesis:
     let authorizationCode: string | null = null;
     try {
@@ -204,6 +202,7 @@ export class EuropeanController extends SessionController<EuropeBlueLinkyConfig>
     this.session.refreshToken = refreshToken!;
     this.session.tokenExpiresAt = Math.floor(Date.now() / 1000 + tokenData.expiresIn);
     return 'OK';
+    */
   }
 
   private async getAuthCodeDirect(username: string, password: string): Promise<string> {
